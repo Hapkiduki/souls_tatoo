@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:souls_tatoo/pages/home.dart';
 import 'pages/home.dart';
 import 'pages/login.dart';
-import 'fragments/profile.dart';
+import 'pages/register.dart';
 
 class SoulsTatooApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -17,10 +17,9 @@ class SoulsTatooApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => LoginPage(),
+        '/register': (context) => RegisterPage(),
         '/home': (context) => new HomePage(),
-        '/profile': (context) => new ProfileFragment(),
       },
-      
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:souls_tatoo/fragments/home.dart';
 import 'package:souls_tatoo/fragments/profile.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class DrawerItem {
   String title;
@@ -24,16 +25,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final drawerItems = [
-    new DrawerItem('Inicio', Icons.home, 0, fragment: HomeFragment()),
-    new DrawerItem('Mi Perfil', Icons.person, 0, fragment: ProfileFragment()),
-    new DrawerItem('Cerrar Sesión', Icons.exit_to_app, 1, route: '/'),
-  ];
   String title = 'Inicio';
   Widget widgetForBody = HomeFragment();
+  final drawerItems = [
+      new DrawerItem('Inicio', Icons.home, 0, fragment: HomeFragment()),
+      new DrawerItem('Mi Perfil', Icons.person, 0, fragment: ProfileFragment()),
+      new DrawerItem('Cerrar Sesión', Icons.exit_to_app, 1, route: '/'),
+    ];
+
+    //Widget widgetForBody = HomeFragment();
 
   @override
   Widget build(BuildContext context) {
+    
+
     var drawerOptions = <Widget>[];
     for (var i = 0; i < drawerItems.length; i++) {
       var item = drawerItems[i];
@@ -54,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       ));
     } //_onSelectItem(i),));
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -70,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     CircleAvatar(
                       radius: 40.0,
                       backgroundColor: Colors.transparent,
-                      backgroundImage: NetworkImage(
+                      backgroundImage: new CachedNetworkImageProvider(
                           'https://loremflickr.com/400/200/meganfox'),
                     ),
                     Text(

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ProfileFragment extends StatefulWidget {
@@ -6,25 +7,12 @@ class ProfileFragment extends StatefulWidget {
 }
 
 class _ProfileFragmentState extends State<ProfileFragment> {
+//  var _scaffoldKey = new GlobalKey<ScaffoldState>();
+  //https://loremflickr.com/400/200/meganfox
   @override
   Widget build(BuildContext context) {
-    return new ListView(
-      children: <Widget>[
-        Container(
-          height: 225.0,
-          decoration: new BoxDecoration(
-            image: new DecorationImage(
-              image: new NetworkImage('https://loremflickr.com/400/200/meganfox'),
-              fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(
-                  Color(0xff801515).withOpacity(0.7), BlendMode.srcATop),
-            ),
-          ),
-          child: Center(
-            child: Text('data'),
-          ),
-        )
-      ],
+    return new Container(
+      child: Text('data'),
     );
   }
 }

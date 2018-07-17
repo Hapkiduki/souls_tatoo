@@ -143,7 +143,9 @@ class _LoginPageState extends State<LoginPage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(context, '/register');
+                          },
                           textColor: Colors.white,
                         ),
                       ],
@@ -204,43 +206,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               )
             ],
-          ) /*new Center(
-          child: new ClipRect(
-            child: new BackdropFilter(
-              filter: new ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-              child: new Container(
-                //child: loginForm,
-                child: Column(
-                  children: <Widget>[
-                    Hero(
-                      tag: 'hero',
-                      child: Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: CircleAvatar(
-                          radius: 72.0,
-                          backgroundColor: Colors.transparent,
-                          backgroundImage: AssetImage('images/ic_launcher.png'),
-                        ),
-                      ),
-                    ),
-                    new Text(
-                      'SoulsTatoo',
-                      textScaleFactor: 2.0,
-                      style: new TextStyle(
-                          fontFamily: 'Gloria Hallelujah',
-                          color: Colors.redAccent,
-                          fontSize: 20.0),
-                    )
-                  ],
-                ),
-                height: 300.0,
-                width: 300.0,
-                decoration: new BoxDecoration(
-                    color: Colors.grey.shade200.withOpacity(0.5)),
-              ),
-            ),
-          ),
-        ),*/
+          ) 
           ),
     );
   }
