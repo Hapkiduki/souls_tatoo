@@ -25,20 +25,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var _scaffoldKey = new GlobalKey<ScaffoldState>();
+  var bottom_bar;
+  bool has_appbar = true;
   String title = 'Inicio';
   Widget widgetForBody = HomeFragment();
   final drawerItems = [
-      new DrawerItem('Inicio', Icons.home, 0, fragment: HomeFragment()),
-      new DrawerItem('Mi Perfil', Icons.person, 0, fragment: ProfileFragment()),
-      new DrawerItem('Cerrar Sesión', Icons.exit_to_app, 1, route: '/'),
-    ];
+    new DrawerItem('Inicio', Icons.home, 0, fragment: HomeFragment()),
+    new DrawerItem('Mi Perfil', Icons.person, 0,
+        fragment: ProfileFragment(), route: '/profile'),
+    new DrawerItem('Cerrar Sesión', Icons.exit_to_app, 1, route: '/'),
+  ];
 
-    //Widget widgetForBody = HomeFragment();
+  //Widget widgetForBody = HomeFragment();
 
   @override
   Widget build(BuildContext context) {
-    
-
     var drawerOptions = <Widget>[];
     for (var i = 0; i < drawerItems.length; i++) {
       var item = drawerItems[i];
@@ -50,8 +52,15 @@ class _MyHomePageState extends State<MyHomePage> {
           Navigator.pop(context);
           if (item.action < 1) {
             setState(() {
+              has_appbar = true;
               widgetForBody = item.fragment;
               title = item.title;
+              bottom_bar = null;
+              if (item.route == '/profile') {
+                has_appbar = false;
+                bottom_bar = MyBottomBar();
+              }
+              //
             });
           } else {
             Navigator.pushReplacementNamed(context, item.route);
@@ -61,9 +70,11 @@ class _MyHomePageState extends State<MyHomePage> {
     } //_onSelectItem(i),));
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
+      appBar: has_appbar
+          ? AppBar(
+              title: Text(title),
+            )
+          : null,
       body: widgetForBody,
       drawer: new Drawer(
         child: ListView(
@@ -93,8 +104,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image:
-                      NetworkImage('https://loremflickr.com/400/200/meganfox'),
+                  image: CachedNetworkImageProvider(
+                      'https://loremflickr.com/400/200/meganfox'),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Color(0xff801515).withOpacity(0.7), BlendMode.srcATop),
@@ -107,6 +118,43 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+      bottomNavigationBar: bottom_bar,
+    );
+  }
+}
+
+class MyBottomBar extends StatefulWidget {
+  
+  @override
+  _MyBottomBar createState() => _MyBottomBar();
+}
+
+class _MyBottomBar extends State<MyBottomBar> {
+  int selected_tab = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      onTap: (selected) {
+        setState(() {
+          selected_tab = selected;
+        });
+      },
+      currentIndex: selected_tab,
+      items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.account_circle),
+          title: Text('Mis Datos'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.favorite),
+          title: Text('Mis Diseños'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.star),
+          title: Text('Mis Favoritos'),
+        ),
+      ],
     );
   }
 }
