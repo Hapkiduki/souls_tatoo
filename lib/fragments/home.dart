@@ -50,7 +50,7 @@ class _HomeFragmentState extends State<HomeFragment> {
                           radius: 25.0,
                           backgroundColor: Colors.black,
                           backgroundImage: new CachedNetworkImageProvider(
-                              'https://pbs.twimg.com/profile_images/378800000773199936/3c5229c5ce2b66101fe2c7481d3c287f.jpeg'),
+                              'https://1.bp.blogspot.com/-h01tjS2T068/WG6hobd6dFI/AAAAAAAAFfc/IbghSb93QhMN-SUoyA9VO2bOB0RBWnGFwCLcB/s1600/gollum.jpg'),
                           foregroundColor: Colors.white,
                         ),
                         new SizedBox(

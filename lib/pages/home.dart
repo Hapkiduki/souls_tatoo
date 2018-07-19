@@ -24,8 +24,9 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+typedef void MyCallback(Widget fragment, bool has_appbar, String title);
+
 class _MyHomePageState extends State<MyHomePage> {
-  var _scaffoldKey = new GlobalKey<ScaffoldState>();
   var bottom_bar;
   bool has_appbar = true;
   String title = 'Inicio';
@@ -38,6 +39,13 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   //Widget widgetForBody = HomeFragment();
+  void _changeBody(Widget fragment, bool has_apbar, String titleT) {
+    setState(() {
+      widgetForBody = fragment;
+      has_appbar = has_apbar;
+      title = titleT.isNotEmpty ? titleT : title;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +55,6 @@ class _MyHomePageState extends State<MyHomePage> {
       drawerOptions.add(new ListTile(
         leading: new Icon(item.icon),
         title: new Text(item.title),
-        //selected: i == _selectedDrawerIndex,
         onTap: () {
           Navigator.pop(context);
           if (item.action < 1) {
@@ -58,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
               bottom_bar = null;
               if (item.route == '/profile') {
                 has_appbar = false;
-                bottom_bar = MyBottomBar();
+                bottom_bar = MyBottomBar(_changeBody);
               }
               //
             });
@@ -124,13 +131,19 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class MyBottomBar extends StatefulWidget {
-  
+  //final VoidCallback changeBody;
+  final MyCallback callback;
+  MyBottomBar(this.callback);
   @override
   _MyBottomBar createState() => _MyBottomBar();
 }
 
 class _MyBottomBar extends State<MyBottomBar> {
   int selected_tab = 0;
+  Widget widget_o = Container(
+    height: 200.0,
+    color: Colors.red,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -138,6 +151,9 @@ class _MyBottomBar extends State<MyBottomBar> {
       onTap: (selected) {
         setState(() {
           selected_tab = selected;
+          if (selected == 2) {
+            widget.callback(HomeFragment(), true, 'Mis Favoritos');
+          }
         });
       },
       currentIndex: selected_tab,
