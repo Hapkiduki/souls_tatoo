@@ -1,0 +1,12 @@
+{
+  "parameter": "About $name",
+  "Email": "электронная почта",
+  "ForgotPass": "Забыли пароль?",
+  "Login": "Авторизоваться",
+  "LoginWith": "Войдите с",
+  "Logout": "Выйти",
+  "MyProfile": "Мой профиль",
+  "Password": "пароль",
+  "Register": "войти в систему",
+  "Rememberme": "Запомни меня"
+}
