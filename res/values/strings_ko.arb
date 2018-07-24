@@ -1,0 +1,12 @@
+{
+  "parameter": "About $name",
+  "Email": "이메일",
+  "ForgotPass": "분실 암호?",
+  "Login": "로그인",
+  "LoginWith": "로 로그인",
+  "Logout": "로그 아웃",
+  "MyProfile": "내 프로필",
+  "Password": "암호",
+  "Register": "로그인",
+  "Rememberme": "날 기억해"
+}

@@ -48,9 +48,9 @@ class _HomeFragmentState extends State<HomeFragment> {
                       children: <Widget>[
                         new CircleAvatar(
                           radius: 25.0,
-                          backgroundColor: Colors.black,
-                          backgroundImage: new CachedNetworkImageProvider(
-                              'https://1.bp.blogspot.com/-h01tjS2T068/WG6hobd6dFI/AAAAAAAAFfc/IbghSb93QhMN-SUoyA9VO2bOB0RBWnGFwCLcB/s1600/gollum.jpg'),
+                          backgroundColor: Colors.transparent,
+                          backgroundImage: new AssetImage(
+                              'images/yo.jpg'),
                           foregroundColor: Colors.white,
                         ),
                         new SizedBox(

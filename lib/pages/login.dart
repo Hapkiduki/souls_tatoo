@@ -1,5 +1,5 @@
-import 'dart:ui';
-
+import 'dart:ui' show BlendMode, Color, ColorFilter, FontWeight;
+import '../generated/i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -11,13 +11,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  /*int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }*/
 
   Widget logo = Center(
     child: Padding(
@@ -61,7 +54,9 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                          labelText: 'Correo Electrónico',
+                          labelText: S
+                              .of(context)
+                              .Email,
                           filled: true,
                           labelStyle: TextStyle(
                               fontFamily: 'Neucha', color: Colors.white)),
@@ -72,7 +67,9 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.white,
                       ),
                       decoration: InputDecoration(
-                        labelText: 'Contraseña',
+                        labelText: S
+                            .of(context)
+                            .Password,
                         filled: true,
                         labelStyle: TextStyle(
                             fontFamily: 'Neucha', color: Colors.white),
@@ -85,7 +82,9 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text(
-                            'Recordarme',
+                            S
+                                .of(context)
+                                .Rememberme,
                             style: TextStyle(
                               fontFamily: 'Neucha',
                               color: Colors.white,
@@ -107,7 +106,9 @@ class _LoginPageState extends State<LoginPage> {
                       height: 46.0,
                       child: RaisedButton(
                         child: Text(
-                          'INICIAR SESIÓN',
+                          S
+                              .of(context)
+                              .Login,
                           style: TextStyle(
                             fontSize: 18.0,
                           ),
@@ -127,7 +128,9 @@ class _LoginPageState extends State<LoginPage> {
                       children: <Widget>[
                         FlatButton(
                           child: Text(
-                            '¿Recuperar contraseña?',
+                            S
+                                .of(context)
+                                .ForgotPass,
                             style: TextStyle(
                               fontFamily: 'Neucha',
                             ),
@@ -137,7 +140,9 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         FlatButton(
                           child: Text(
-                            'Registrarse',
+                            S
+                                .of(context)
+                                .Register,
                             style: TextStyle(
                               fontFamily: 'Neucha',
                               fontWeight: FontWeight.bold,
@@ -159,7 +164,9 @@ class _LoginPageState extends State<LoginPage> {
                   new Container(
                     margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 2.0),
                     child: Text(
-                      'Iniciar Sesión Con',
+                      S
+                          .of(context)
+                          .LoginWith,
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

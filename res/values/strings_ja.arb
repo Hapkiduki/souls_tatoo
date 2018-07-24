@@ -1,0 +1,12 @@
+{
+  "parameter": "About $name",
+  "Email": "Eメール",
+  "ForgotPass": "忘れた パスワード か？",
+  "Login": "ログイン",
+  "LoginWith": "でログイン",
+  "Logout": "ログアウト",
+  "MyProfile": "私のプロフィール",
+  "Password": "パスワード",
+  "Register": "サインイン",
+  "Rememberme": "忘れない"
+}
