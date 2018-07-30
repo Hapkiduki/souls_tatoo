@@ -8,5 +8,9 @@
   "MyProfile": "Мой профиль",
   "Password": "пароль",
   "Register": "войти в систему",
-  "Rememberme": "Запомни меня"
+  "Rememberme": "Запомни меня",
+  "Home": "инициирование",
+  "BTData": "Моя информация",
+  "BTDesign": "Мои проекты",
+  "BTFavorites": "Мои избранные"
 }

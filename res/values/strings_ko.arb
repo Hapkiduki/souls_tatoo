@@ -8,5 +8,9 @@
   "MyProfile": "내 프로필",
   "Password": "암호",
   "Register": "로그인",
-  "Rememberme": "날 기억해"
+  "Rememberme": "날 기억해",
+  "Home": "홈",
+  "BTData": "내 정보",
+  "BTDesign": "내 디자인",
+  "BTFavorites": "내 즐겨 찾기"
 }

@@ -8,5 +8,9 @@
   "MyProfile": "私のプロフィール",
   "Password": "パスワード",
   "Register": "サインイン",
-  "Rememberme": "忘れない"
+  "Rememberme": "忘れない",
+  "Home": "ホーム",
+  "BTData": "私の情報",
+  "BTDesign": "私のデザイン",
+  "BTFavorites": "私のお気に入り"
 }

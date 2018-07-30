@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:souls_tatoo/generated/i18n.dart';
 
 class ProfileFragment extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _ProfileFragmentState extends State<ProfileFragment> {
     return new CustomScrollView(
       slivers: <Widget>[
         new SliverAppBar(
-          title: Text('Mi perfil'),
+          title: Text(S.of(context).MyProfile),
           expandedHeight: 250.0,
           floating: false,
           pinned: true,

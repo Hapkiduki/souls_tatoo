@@ -8,5 +8,9 @@
   "MyProfile": "My Profile",
   "Password": "Password",
   "Register": "Sign In",
-  "Rememberme": "Remember me"
+  "Rememberme": "Remember me",
+  "Home": "Home",
+  "BTData": "My data",
+  "BTDesign": "My designs",
+  "BTFavorites": "My favourites"
 }

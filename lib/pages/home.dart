@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:souls_tatoo/fragments/home.dart';
 import 'package:souls_tatoo/fragments/profile.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:souls_tatoo/generated/i18n.dart';
 
 class DrawerItem {
   String title;
@@ -29,14 +30,9 @@ typedef void MyCallback(Widget fragment, bool has_appbar, String title);
 class _MyHomePageState extends State<MyHomePage> {
   var bottom_bar;
   bool has_appbar = true;
-  String title = 'Inicio';
+  String title;
   Widget widgetForBody = HomeFragment();
-  final drawerItems = [
-    new DrawerItem('Inicio', Icons.home, 0, fragment: HomeFragment()),
-    new DrawerItem('Mi Perfil', Icons.person, 0,
-        fragment: ProfileFragment(), route: '/profile'),
-    new DrawerItem('Cerrar Sesión', Icons.exit_to_app, 1, route: '/'),
-  ];
+
 
   //Widget widgetForBody = HomeFragment();
   void _changeBody(Widget fragment, bool has_apbar, String titleT) {
@@ -49,6 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    title = S.of(context).Home;
+    final drawerItems = [
+      new DrawerItem(S.of(context).Home, Icons.home, 0, fragment: HomeFragment()),
+      new DrawerItem(S.of(context).MyProfile, Icons.person, 0,
+          fragment: ProfileFragment(), route: '/profile'),
+      new DrawerItem(S.of(context).Logout, Icons.exit_to_app, 1, route: '/'),
+    ];
     var drawerOptions = <Widget>[];
     for (var i = 0; i < drawerItems.length; i++) {
       var item = drawerItems[i];
@@ -160,15 +163,15 @@ class _MyBottomBar extends State<MyBottomBar> {
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.account_circle),
-          title: Text('Mis Datos'),
+          title: Text(S.of(context).BTData),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.favorite),
-          title: Text('Mis Diseños'),
+          title: Text(S.of(context).BTDesign),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.star),
-          title: Text('Mis Favoritos'),
+          title: Text(S.of(context).BTFavorites),
         ),
       ],
     );

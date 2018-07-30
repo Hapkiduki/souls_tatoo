@@ -4,6 +4,7 @@ import 'pages/home.dart';
 import 'pages/login.dart';
 import 'pages/register.dart';
 import 'generated/i18n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 class SoulsTatooApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -12,7 +13,7 @@ class SoulsTatooApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
 
-      localizationsDelegates: [S.delegate],
+      localizationsDelegates: [GlobalMaterialLocalizations.delegate,S.delegate, GlobalWidgetsLocalizations.delegate,],
       supportedLocales: S.delegate.supportedLocales,
 
 

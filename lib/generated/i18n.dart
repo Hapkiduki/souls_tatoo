@@ -21,8 +21,12 @@ class S implements WidgetsLocalizations {
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
+  String get BTData => "My data";
+  String get BTDesign => "My designs";
+  String get BTFavorites => "My favourites";
   String get Email => "Email";
   String get ForgotPass => "Forgot Password?";
+  String get Home => "Home";
   String get Login => "Login";
   String get LoginWith => "Login with";
   String get Logout => "Logout";
@@ -33,7 +37,6 @@ class S implements WidgetsLocalizations {
   String parameter(String name) => "About $name";
 }
 
-
 class ru extends S {
   const ru();
 
@@ -42,6 +45,12 @@ class ru extends S {
 
   @override
   String get Email => "электронная почта";
+  @override
+  String get BTData => "Моя информация";
+  @override
+  String get Login => "Авторизоваться";
+  @override
+  String get ForgotPass => "Забыли пароль?";
   @override
   String get Register => "войти в систему";
   @override
@@ -53,9 +62,11 @@ class ru extends S {
   @override
   String get MyProfile => "Мой профиль";
   @override
-  String get Login => "Авторизоваться";
+  String get BTDesign => "Мои проекты";
   @override
-  String get ForgotPass => "Забыли пароль?";
+  String get Home => "инициирование";
+  @override
+  String get BTFavorites => "Мои избранные";
   @override
   String get Password => "пароль";
   @override
@@ -71,6 +82,12 @@ class ko extends S {
   @override
   String get Email => "이메일";
   @override
+  String get BTData => "내 정보";
+  @override
+  String get Login => "로그인";
+  @override
+  String get ForgotPass => "분실 암호?";
+  @override
   String get Register => "로그인";
   @override
   String get Rememberme => "날 기억해";
@@ -81,9 +98,11 @@ class ko extends S {
   @override
   String get MyProfile => "내 프로필";
   @override
-  String get Login => "로그인";
+  String get BTDesign => "내 디자인";
   @override
-  String get ForgotPass => "분실 암호?";
+  String get Home => "홈";
+  @override
+  String get BTFavorites => "내 즐겨 찾기";
   @override
   String get Password => "암호";
   @override
@@ -99,6 +118,12 @@ class pt extends S {
   @override
   String get Email => "O email";
   @override
+  String get BTData => "Meus dados";
+  @override
+  String get Login => "Entrar";
+  @override
+  String get ForgotPass => "Esqueceu a senha?";
+  @override
   String get Register => "Assinar em";
   @override
   String get Rememberme => "Lembre de mim";
@@ -109,9 +134,11 @@ class pt extends S {
   @override
   String get MyProfile => "Meu perfil";
   @override
-  String get Login => "Entrar";
+  String get BTDesign => "Meus projetos";
   @override
-  String get ForgotPass => "Esqueceu a senha?";
+  String get Home => "Home";
+  @override
+  String get BTFavorites => "Meus favoritos";
   @override
   String get Password => "Senha";
   @override
@@ -127,6 +154,12 @@ class ja extends S {
   @override
   String get Email => "Eメール";
   @override
+  String get BTData => "私の情報";
+  @override
+  String get Login => "ログイン";
+  @override
+  String get ForgotPass => "忘れた パスワード か？";
+  @override
   String get Register => "サインイン";
   @override
   String get Rememberme => "忘れない";
@@ -137,9 +170,11 @@ class ja extends S {
   @override
   String get MyProfile => "私のプロフィール";
   @override
-  String get Login => "ログイン";
+  String get BTDesign => "私のデザイン";
   @override
-  String get ForgotPass => "忘れた パスワード か？";
+  String get Home => "ホーム";
+  @override
+  String get BTFavorites => "私のお気に入り";
   @override
   String get Password => "パスワード";
   @override
@@ -159,6 +194,12 @@ class es extends S {
   @override
   String get Email => "Correo Electrónico";
   @override
+  String get BTData => "Mis Datos";
+  @override
+  String get Login => "INICIAR SESIÓN";
+  @override
+  String get ForgotPass => "¿Recuperar contraseña?";
+  @override
   String get Register => "Registrarse";
   @override
   String get Rememberme => "Recordarme";
@@ -169,9 +210,11 @@ class es extends S {
   @override
   String get MyProfile => "Mi Perfil";
   @override
-  String get Login => "Iniciar Sesión";
+  String get BTDesign => "Mis Diseños";
   @override
-  String get ForgotPass => "¿Recuperar contraseña?";
+  String get Home => "Inicio";
+  @override
+  String get BTFavorites => "Mis Favoritos";
   @override
   String get Password => "Contraseña";
   @override
@@ -214,6 +257,8 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<WidgetsLocali
     final String lang = getLang(locale);
     switch (lang) {
 
+      case "en":
+        return new SynchronousFuture<WidgetsLocalizations>(const en());
       case "ru":
         return new SynchronousFuture<WidgetsLocalizations>(const ru());
       case "ko":
@@ -222,8 +267,6 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<WidgetsLocali
         return new SynchronousFuture<WidgetsLocalizations>(const pt());
       case "ja":
         return new SynchronousFuture<WidgetsLocalizations>(const ja());
-      case "en":
-        return new SynchronousFuture<WidgetsLocalizations>(const en());
       case "es":
         return new SynchronousFuture<WidgetsLocalizations>(const es());
 
